@@ -25,11 +25,11 @@ to replace the banner. This covers the following concepts
 
 ## 03 Load More Contacts
 
-This example demonstrates how to load more contacts using htmx. The initial page loads returns the `01/index.html`
- view which contains the first 3 contacts. When you click the load contacts button a call is made to the `_01/ContactsController` 
-to request the next 3 contacts. The response is then inserted into the DOM using htmx.
+This example demonstrates how to load more orders using htmx. The initial page loads returns the `01/index.html`
+ view which contains the first 3 orders. When you click the load orders button a call is made to the `_01/ContactsController` 
+to request the next 3 orders. The response is then inserted into the DOM using htmx.
 
-![Load More Contacts](./images/load-more-contacts.png)
+![Load More Contacts](./images/load-more-orders.png)
 
 ## 04 - Add new Contact (Coming Soon!)
 

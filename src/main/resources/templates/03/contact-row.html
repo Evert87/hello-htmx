@@ -1,4 +1,4 @@
-<!doctype html>
+1<!doctype html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -7,9 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <body>
-    <tr th:fragment="contact-row" th:each="contact : ${contacts}" >
+    <tr th:fragment="contact-row" th:each="contact : ${orders}" >
         <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0" th:text="${contact.name}">Name</td>
         <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0" th:text="${contact.email}">Email</td>
         <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0" th:text="${contact.id}">ID</td>
+        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+            <input id="gre2" type="checkbox" name="gre2" th:checked="${contact.check}" />
+        </td>
+<!--        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0" th:text="${contact.id}">ID</td>-->
+<!--        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">-->
+<!--        <input th:field="${contact.check}"  th:checked="${contact.check}" />-->
+<!--            <input th:field="${contact.id}" /></td>-->
+<!--            <input th:field="*{books[__${itemStat.index}__].title}" /></td>-->
+<!--            <input type="checkbox" th:field name="modify:"${contact.id}>-->
+<!--        </label>-->
+        </td>
     </tr>
 </body>

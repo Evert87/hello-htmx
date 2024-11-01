@@ -5,8 +5,10 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -23,13 +25,19 @@ public class ContactsController {
     @GetMapping(value = "", produces = MediaType.TEXT_HTML_VALUE)
     public String list(Model model) {
         model.addAttribute("contacts", createContacts(3));
-        return "01/index";
+        return "03/index";
     }
 
     @GetMapping("/load")
     public String getRows(Model model) {
         model.addAttribute("contacts", createContacts(3));
-        return "01/contact-row :: contact-row";
+        return "03/contact-row :: contact-row";
+    }
+
+    @PostMapping("/users")
+    public void updateRows(Model model, List<Contact> contacts) {
+        System.out.println("model = " + model);
+        System.out.println("contacts = " + contacts);
     }
 
     private List<Contact> createContacts(Integer count) {
@@ -37,7 +45,8 @@ public class ContactsController {
                 .mapToObj(i -> new Contact(
                         faker.name().firstName() + " " + faker.name().lastName(),
                         faker.internet().emailAddress(),
-                        faker.internet().uuid()
+                        faker.internet().uuid(),
+                        false
                 )).toList();
     }
 
